@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\title{Nichtstandard Analysis 1}
+\date{21.1.2020}
+\author{Klaus Philipp Theyssen}
+
+\begin{document}
+
+\maketitle
+
+%\paragraph{Im Folgenden seien}
+
+\section{Motivation}
+Leibniz und dann Epsilontik von Weierstraß und Bolzano.\\
+Abraham Robinson konstruiert *R (1961) und gibt damit den infitesimalen Größen eine solide formale Basis. \\
+Motivation durch Differentialquotienten.
+
+\section{Konstruktion von *$\mathbb{R}$}
+\paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
+\begin{enumerate}
+      \item Addition, Subtraktion und Multiplikation Komponentenweise, für $a, b \in R$  
+            $$ (a_1 \pm b_1, a_2 \pm b_2,...) \text{ und } (a_1 * b_1, a_2 * b_2,...) $$ 
+      \item Die Reellen Zahlen werden kanonisch in R eingebettet durch, für $ r \in \mathbb{R} $ 
+            $$ r \mapsto (r,r,r,...) $$
+\end{enumerate}
+
+Nun wollen wir aus R den Körper *R konstruieren. 
+
+\paragraph{1.2 Definition} Ideal
+
+\paragraph{1.3 Definition} Sei D ein Ideal in R, für das gilt:  
+      $$ a \in D \iff a^{(n)} = 0 \text{ für fast alle } n \in \mathbb{N}  $$
+
+\paragraph{1.4 Definition} maximales Ideal
+
+\paragraph{1.5 Satz} Existenz eines maximalen Ideals M in R, das D umfasst (Zornsches Lemma)
+
+
+\paragraph{1.6 Definition} Äquivalenzrealtion auf R  % TODO (nachrechnen, klar machen)
+$$ a \equiv b \text{ mod } M \iff a - b \in M $$
+
+\paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
+
+\paragraph{1.8 Definition}  *$\mathbb{R} = R/M $
+
+\paragraph{1.9 Satz} 
+Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
+Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
+der Logik 1. Stufe behält.
+
+\paragraph{1.10 Definition}  
+$$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
+Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften: 
+\begin{enumerate}
+      \item $ \emptyset \notin U $      
+      \item $ \mathbb{N} \in U$ 
+      \item $ Z_1, Z_2 \in U \Rightarrow Z_1 \cap Z_2 \in U$ 
+      \item $ Z \in U, \text{ } Z \subset A \subset \mathbb{N} \Rightarrow A \in U$ 
+      \item $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
+      \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
+      \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
+\end{enumerate}
+
+
+\section{Eigenschaften von *R}
+
+
+\end{document}
