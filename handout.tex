@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{oldgerm}
 
 \renewcommand{\labelenumi}{(\roman{enumi})}
 
@@ -19,21 +20,21 @@
 
 %\paragraph{Im Folgenden seien}
 
-\section{Motivation}
-Leibniz und dann Epsilontik von Weierstraß und Bolzano.\\
-Abraham Robinson konstruiert *R (1961) und gibt damit den infitesimalen Größen eine solide formale Basis. \\
-Motivation durch Differentialquotienten.
+%\section{Motivation}
+%Leibniz und dann Epsilontik von Weierstraß und Bolzano.\\
+%Abraham Robinson konstruiert *R (1961) und gibt damit den infitesimalen Größen eine solide formale Basis. \\
+%Motivation durch Differentialquotienten.
 
 \section{Konstruktion von *$\mathbb{R}$}
 \paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
 \begin{enumerate}
       \item Addition, Subtraktion und Multiplikation Komponentenweise, für $a, b \in R$  
             $$ (a_1 \pm b_1, a_2 \pm b_2,...) \text{ und } (a_1 * b_1, a_2 * b_2,...) $$ 
-      \item Die Reellen Zahlen werden kanonisch in R eingebettet durch, für $ r \in \mathbb{R} $ 
+      \item Die Reellen Zahlen werden kanonisch in R eingebettet, für $ r \in \mathbb{R} $ 
             $$ r \mapsto (r,r,r,...) $$
 \end{enumerate}
-
-Nun wollen wir aus R den Körper *R konstruieren. 
+\smallskip
+Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
 
 \paragraph{1.2 Definition} Ideal
 
@@ -45,7 +46,7 @@ Nun wollen wir aus R den Körper *R konstruieren.
 \paragraph{1.5 Satz} Existenz eines maximalen Ideals M in R, das D umfasst (Zornsches Lemma)
 
 
-\paragraph{1.6 Definition} Äquivalenzrealtion auf R  % TODO (nachrechnen, klar machen)
+\paragraph{1.6 Definition} Äquivalenzrelation auf R  % TODO (nachrechnen, klar machen)
 $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
 \paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
@@ -73,5 +74,39 @@ Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften:
 
 \section{Eigenschaften von *R}
 
+\paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
+sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen
+
+\paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
+$$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
+
+\paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
+Ist echter konvexer Teilring von *$\mathbb{R}$, die Elemente von \textfrak{D} nennt man $ endliche $ Größen. \\
+Konvexität meint hier:
+$$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
+
+\paragraph{2.4 Definition} $ \textfrak{M} = \{a \in \text{*}\mathbb{R}: |a| \leqslant \epsilon, \text{ für alle } \epsilon \in \mathbb{R}^+ \} $
+
+\bigskip
+\textfrak{M} ist konvexes Ideal in \textfrak{D}, sodass folgende Eigenschaften erfüllt sind 
+\begin{enumerate}
+      \item $a,b \in \textfrak{M} \Rightarrow a + b \in \textfrak{M} $ 
+      \item $a \in \textfrak{M}, b \in \textfrak{D} \Rightarrow a * b \in \textfrak{M} $ 
+      \item $0 \leqslant b \leqslant a \in \textfrak{M} \Rightarrow b \in \textfrak{M} $ 
+\end{enumerate}
+Die Elemente von \textfrak{M} bezeichnen wir als $ unendliche \text{ } kleine $ oder $ infinitesimale $ Größen. 
+Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfrak{D} sind bezeichnen wir als $ unendliche $ oder $ infinite $ Größen.
+
+\paragraph{2.5 Definition} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
+$$a \approx b \iff a - b \in \textfrak{M}$$
+Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
+
+\paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
+$ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
+
+\paragraph{2.7 Definition} $ \text{Stetigkeit einer Funktion } f:\mathbb{R} \to \mathbb{R} \text{ im Punkt } x \in \mathbb{R} \\
+\text{seien }\epsilon, \delta  \in \mathbb{R}^+ \text{ und } h \in \mathbb{R} \text{ dann muss gelten:}$
+$$ \forall \epsilon \text{ } \exists \delta \textit{sodass für alle h gilt: } |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
+\paragraph{2.8 Satz} Stetigkeit Nichtstandard
 
 \end{document}
