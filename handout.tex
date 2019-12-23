@@ -30,18 +30,18 @@
 \begin{enumerate}
       \item Addition, Subtraktion und Multiplikation Komponentenweise, für $a, b \in R$  
             $$ (a_1 \pm b_1, a_2 \pm b_2,...) \text{ und } (a_1 * b_1, a_2 * b_2,...) $$ 
-      \item Die Reellen Zahlen werden kanonisch in R eingebettet, für $ r \in \mathbb{R} $ 
-            $$ r \mapsto (r,r,r,...) $$
+     % \item Die Reellen Zahlen werden kanonisch in R eingebettet, für $ r \in \mathbb{R} $ 
+     %       $$ r \mapsto (r,r,r,...) $$
 \end{enumerate}
 \smallskip
 Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
 
-\paragraph{1.2 Definition} Ideal
+% \paragraph{1.2 Definition} Ideal
 
 \paragraph{1.3 Definition} Sei D ein Ideal in R, für das gilt:  
       $$ a \in D \iff a^{(n)} = 0 \text{ für fast alle } n \in \mathbb{N}  $$
 
-\paragraph{1.4 Definition} maximales Ideal
+% \paragraph{1.4 Definition} maximales Ideal
 
 \paragraph{1.5 Satz} Existenz eines maximalen Ideals M in R, das D umfasst (Zornsches Lemma)
 
@@ -53,12 +53,7 @@ $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
 \paragraph{1.8 Definition}  *$\mathbb{R} = R/M $
 
-\paragraph{1.9 Satz} 
-Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
-Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
-der Logik 1. Stufe behält.
-
-\paragraph{1.10 Definition}  
+\paragraph{1.9 Definition}  
 $$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
 Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften: 
 \begin{enumerate}
@@ -70,6 +65,13 @@ Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften:
       \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
       \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
 \end{enumerate}
+
+\paragraph{1.10 Satz} 
+Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
+Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
+der Logik 1. Stufe behält.
+
+
 
 
 \section{Eigenschaften von *R}
@@ -107,6 +109,8 @@ $ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeich
 \paragraph{2.7 Definition} $ \text{Stetigkeit einer Funktion } f:\mathbb{R} \to \mathbb{R} \text{ im Punkt } x \in \mathbb{R} \\
 \text{seien }\epsilon, \delta  \in \mathbb{R}^+ \text{ und } h \in \mathbb{R} \text{ dann muss gelten:}$
 $$ \forall \epsilon \text{ } \exists \delta \textit{sodass für alle h gilt: } |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
-\paragraph{2.8 Satz} Stetigkeit Nichtstandard
+\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig }
+\textit{ falls für alle }\\ h \approx 0 \textit{ gilt:} $
+$$ \text{*}f(x + h) \approx f(x) $$ 
 
 \end{document}
