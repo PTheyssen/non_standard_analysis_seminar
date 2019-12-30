@@ -1,0 +1,247 @@
+\documentclass[a4paper]{article}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{oldgerm}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+\title{Nichtstandard Analysis 1}
+\date{21.1.2020}
+\author{Klaus Philipp Theyssen}
+
+\begin{document}
+
+\maketitle
+
+%\paragraph{Im Folgenden seien}
+
+\section{Motivation}
+
+\paragraph{Geschichte:}  
+BEISPIELE an passenden Stellen !!!! \bigskip % TODO
+
+Das Rechnen mit unendlich kleinen und unendlich großen Zahlen wie den Leibnizschen Differentialen
+$ dy $ und $ dx $ in früheren Jahrhunderten der Mathematik und Physik selbstverständlich, 
+aber auch umstritten (Buch von Bischof, Video von Weiz). \\
+Durch die Epsilontik, den Aufbau der Analysis auf dem Limesbegriff, von Weierstraß wurden diese Größen aus 
+exakten Beweisen verbannt. \\ 
+Abraham Robinson (1961) gibt diesen Größen eine formal korrekte Basis durch Konstruktion von *$\mathbb{R}$.
+
+\bigskip
+TODO: Limes nochmal klar machen Grundlagen der Analysis sollten sitzen 
+
+
+\paragraph{Differentialquotient:}
+Definition des Differentialquotienten in *$\mathbb{R}$, und diese Größen als Funktionen der Zeit zu sehen,
+da sie variable Größe haben und somit auf die Folgen reeller Zahlen zu kommen.
+
+
+\section{Konstruktion von *$\mathbb{R}$}
+\paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
+\begin{enumerate}
+      \item Addition, Subtraktion und Multiplikation Komponentenweise, für $a, b \in R$  
+            $$ (a_1 \pm b_1, a_2 \pm b_2,...) \text{ und } (a_1 * b_1, a_2 * b_2,...) $$ 
+      \item Die Reellen Zahlen werden kanonisch in R eingebettet, für $ r \in \mathbb{R} $ 
+            $$ r \mapsto (r,r,r,...) $$
+\end{enumerate}
+\smallskip
+Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
+
+\paragraph{1.2 Definition} Ideal \\
+Es sei $ R $ ein Ring. \\ 
+$ \text{Ein} \textit{ Ideal } \text{ in } R \text{ ist eine Teilmenge } I \subseteq R \text{, die bezüglich der Addition 
+eine} \\ \text{Untergruppe ist und folgende Eigenschaft hat:} $
+$$ \forall x \in I, r \in R: xr \in I \text{ und } rx \in I$$
+Beispielsweise ist der Kern eines Ringhomomorphismus $ \varphi:R \to S $ ein Ideal. 
+
+
+\paragraph{1.3 Definition} Sei D ein Ideal in R, für das gilt:  
+      $$ a \in D \iff a^{(n)} = 0 \text{ für fast alle } n \in \mathbb{N}  $$
+
+\paragraph{1.4 Definition} maximales Ideal \\
+Ein Ideal $ I \subset R $ heißt maximales Ideal, wenn zwischen I und R kein weiteres Ideal liegt:
+$$ I \subset J \subsetneqq R \Rightarrow I = J$$
+
+
+\paragraph{1.5 Satz} Jedes echte Ideal $ A $ in einem Ring $ R $ mit Einselement ist in einem maximalen Ideal enthalten. (Zornsches Lemma).
+\bigskip
+
+Wir beweisen die Aussage mit dem \textbf{Zornschen Lemma}: Eine Halbordnung in der jede Kette eine obere Schranke hat, besitzt ein maximales Element. 
+\smallskip
+
+\textbf{Kette}: Sei $ (a,r) $ eine Halbordnung sind zwei Elemente einer Teilmenge $ b $ von $ a $ mit $ r $ vergleichbar 
+so heißt $ b $ eine Kette in $ (a,r) $.
+
+\begin{proof}
+      Die Menge $ X $ aller Ideale $ B $ von $ R $ mit $ A \subseteq B \neq R $ ist wegen $ A \in X $
+      nicht leer und bzgl. der Inklusion $ \subseteq $ geordnet.
+      Es sei $ K $ eine Kette in $ X $ also:
+      $$ B, B' \in K \Rightarrow B \subseteq B' \text{ oder } B' \subseteq B $$ 
+      Beh: $ C := \bigcup_{B \in K} B $ ist ein Ideal von R. \\
+      Es seien $ a, a' \in C $ etwa $ a \in B \in K $ und $ a' \in B' \in K $, wegen 
+      $ B \subseteq B' \text{ oder } B' \subseteq B $ folgt $ a - a' \in B' \subseteq C $
+      oder $ a - a' \in B \subseteq C $  (Untergruppenkrit. !!!) und $ r a, a r \in B \subseteq C $ also ist C ein Ideal.
+
+      Es gilt $ A \subseteq C $, es gilt $ 1 \notin B $ für jedes $ B \in K $, da sonst B bereits der ganze Ring wäre, also 
+      muss $ 1 \notin C $ gelten. Also $ C \neq R $. Somit liegt $ C $ in $ K $, ist eine obere Schranke in $ K $.
+      Folglich ist $ (X,\subseteq) $ induktiv geordnet und besitzt mit dem Zornschen Lemma ein maximales Ideal $ M $ von $ R $ mit $ A \subseteq M $.
+\end{proof}
+
+\paragraph{1.6 Definition} Äquivalenzrelation auf R  % TODO (nachrechnen, klar machen)
+$$ a \equiv b \text{ mod } M \iff a - b \in M $$
+\begin{enumerate}
+      \item reflexiv: $ 0 \in M  $ da $ M $ additive Untergruppe von $ R $: 
+      $$ 0 =  a - a \in M $$
+     \item symmetrisch: Wenn $ a - b \in M $ dann:
+      $$  0 = (a - b) + (b - a) \in M \Rightarrow b - a \in M $$
+     \item transitiv: Wenn $ a - b, b - c \in M $ dann:
+      $$ (a - b) + (b - c) = a - c \in M $$
+\end{enumerate}
+
+
+\paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
+\begin{proof}
+      $\Rightarrow:$  \\
+      Sei $ M \subset R $ maximal und $ a + M \neq 0_{R/M} = M, $ also $ a \notin M$. \\
+      $ R = M + (a) $ ($ M \subset M \cup \{a\} \neq R $ Widerspruch zu Maximalität von $ M $) \\
+      $$ M + (a) = \{m + ba | \text{ } w \in M, b \in R\} $$
+      $$ \iff \exists b \in R \text{ und } m \in M \text{ mit } ab + w = 1$$ 
+      $$ \iff  \exists b \in R \text{ mit } (a + M)(b + M) = 1 + M = 1_{R/M}$$ 
+      Somit ist $ R/M $ ein Körper da jedes Element ein Inverses besitzt:
+      $$ (a + M)^{-1} = b + M $$
+      $\Leftarrow:$ \\
+      Ist $ R/M $ ein Körper und $ a \notin M $ dann git es ein $ b \in R $ mit 
+      $$ (a + M)(b + M) = 1_{R/M} $$
+      $$ \iff M + (a) = R $$  
+      Ist also $ M \subsetneqq I $ dann gilt $ I = R $. 
+\end{proof}
+
+\paragraph{1.8 Definition}  *$\mathbb{R} = R/M $
+
+\paragraph{Bemerkung} Da jede konstante Folge $ \neq 0 $ in $ R $ invertierbar ist,
+wird der Unterkörper $ \mathbb{R} $ von $ R $ bei der Restklassenbildung nicht beeinträchtigt, das heißt
+wir finden $ \mathbb{R} $ als isomorphes Bild in $ R/M $ wieder.k
+
+\paragraph{1.9 Satz} 
+Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
+Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
+der Logik 1. Stufe behält.
+\begin{proof}
+      Definiere zu $f:\mathbb{R}^m \to \mathbb{R} $ eine komponentenweise Fortsetzung $ \overline{f} $ durch
+      $$ \overline{f}(a_1,...,a_m) = (f(a^{(1)}_1,...,a^{1}_m), f(a^{(2)}_1,...,a^{2}_m),...) $$
+      wobei $ a_i $ für $ 1 \leqslant i \leqslant m $ Folgen aus R sind. \\
+      Dann setzen wir 
+      $$ \text{*}f(a_1,...,a_m) \equiv \overline{f}(a_1,...,a_m) \text{ mod } M $$
+      hier sind die Folgen $ a_1,...,a_m $ Vertreter von gewissen Restklassen in $ R/M $
+      Jetzt müssen wir die Wohldefiniertheit zeigen, also das diese Definition nicht von der Wahl 
+      der Vertreter in $ R/M $ abhängt. Seien 
+      $$ a_1 \equiv b_2,...,a_m \equiv b_m \text{ mod } M $$ 
+      dann ist zu zeigen, dass
+      $$ \overline{f}(a_1,...,a_m) \equiv \overline{f}(b_1,...,b_m) \text{ mod } M $$
+      Zunächst betrachten wir das ganze nur für das Ideal $ D $, und wollen dann den Beweis für beliebige Ideale führen
+      dafür werden wir die Definition des Ultrafilters nutzen. \\
+      Fall $ D $ ist das Ideal: \\
+      $ a \equiv b \text{ mod } D $ bedeutet $ a^{(n)} = b^{(n)} $ für fast alle $ n $ (für alle bis auf endlich viele)
+      dann gilt aber auch ffa $ n \in \mathbb{N} $:
+      $$ a^{(n)}_1 = b^{(n)}_1 \text{ und }...\text{ und } a^{(n)}_m = b^{(n)}_m $$ 
+      also gilt für ffa $ n $ 
+      $$  f(a^{(n)}_1,...,a^{n}_m) = f(b^{(n)}_1,...,b^{n}_m) $$
+      woraus folgt, dass $ \overline{f}(a_1,...,a_m) \equiv \overline{f}(b_1,...,b_m) \text{ mod } D $
+
+\end{proof}
+
+\paragraph{1.10 Definition}  Für den Beweis von 1.9 mit beliebigem Ideal: 
+$$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
+$U $ Ist ein Filter auf $ \mathbb{N} $. Ist $ M $ maximales Ideal so ist $ U_M $ ein Ultrafilter, es gelten die folgenden Eigenschaften: 
+
+\begin{enumerate}
+      \item $ \emptyset \notin U $      
+      \item $ \mathbb{N} \in U$ 
+      \item $ Z_1, Z_2 \in U \Rightarrow Z_1 \cap Z_2 \in U$ 
+      \item $ Z \in U, \text{ } Z \subset A \subset \mathbb{N} \Rightarrow A \in U$ 
+      \item $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
+      \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
+      \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
+\end{enumerate}
+\begin{proof}
+      TODO: Eigenschaften einzeln Nachweisen
+\end{proof}
+
+
+\section{Eigenschaften von *R}
+
+\paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
+sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen
+\begin{proof}
+      TODO: Eigenschaften einzeln Nachweisen
+\end{proof}
+
+\paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
+$$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
+\begin{proof}
+      TODO: mithilfe von *$| | $ 
+\end{proof}
+
+\paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
+Ist echter konvexer Teilring von *$\mathbb{R}$, die Elemente von \textfrak{D} nennt man $ endliche $ Größen. \\
+Konvexität meint hier:
+$$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
+\begin{proof}
+      TODO: Nachrechnen
+\end{proof}
+
+
+\paragraph{2.4 Definition} $ \textfrak{M} = \{a \in \text{*}\mathbb{R}: |a| \leqslant \epsilon, \text{ für alle } \epsilon \in \mathbb{R}^+ \} $
+
+\bigskip
+\textfrak{M} ist konvexes Ideal in \textfrak{D}, sodass folgende Eigenschaften erfüllt sind 
+\begin{enumerate}
+      \item $a,b \in \textfrak{M} \Rightarrow a + b \in \textfrak{M} $ 
+      \item $a \in \textfrak{M}, b \in \textfrak{D} \Rightarrow a * b \in \textfrak{M} $ 
+      \item $0 \leqslant b \leqslant a \in \textfrak{M} \Rightarrow b \in \textfrak{M} $ 
+\end{enumerate}
+\begin{proof}
+      TODO: Nachrechnen
+\end{proof}
+
+Die Elemente von \textfrak{M} bezeichnen wir als $ unendliche \text{ } kleine $ oder $ infinitesimale $ Größen. 
+Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfrak{D} sind bezeichnen wir als $ unendliche $ oder $ infinite $ Größen.
+
+\paragraph{2.5 Definition} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
+$$a \approx b \iff a - b \in \textfrak{M}$$
+Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
+\begin{proof}
+      TODO: Beispiele aus elementary Calculus
+\end{proof}
+
+\paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
+$ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
+\begin{proof}
+      TODO: Beweis 
+\end{proof}
+
+
+\paragraph{2.7 Definition} $ \text{Stetigkeit einer Funktion } f:\mathbb{R} \to \mathbb{R} \text{ im Punkt } x \in \mathbb{R} \\
+\text{seien }\epsilon, \delta  \in \mathbb{R}^+ \text{ und } h \in \mathbb{R} \text{ dann muss gelten:}$
+$$ \forall \epsilon \text{ } \exists \delta \textit{sodass für alle h gilt: } |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
+\begin{proof}
+      TODO: klarmachen, Skizze vorbereiten und andere Definitionen anschauen zum beispiel mit $ x - x_0 $ 
+\end{proof}
+
+
+
+\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig }
+\textit{ falls für alle }\\ h \approx 0 \textit{ gilt:} $
+$$ \text{*}f(x + h) \approx f(x) $$ 
+\begin{proof}
+      TODO: Beweis 
+\end{proof}
+
+
+
+\end{document}

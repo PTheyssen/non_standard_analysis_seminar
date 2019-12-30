@@ -34,7 +34,7 @@
      %       $$ r \mapsto (r,r,r,...) $$
 \end{enumerate}
 \smallskip
-Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
+Wir wollen aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
 
 % \paragraph{1.2 Definition} Ideal
 
@@ -43,7 +43,7 @@ Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division.
 
 % \paragraph{1.4 Definition} maximales Ideal
 
-\paragraph{1.5 Satz} Existenz eines maximalen Ideals M in R, das D umfasst (Zornsches Lemma)
+\paragraph{1.5 Satz} Jedes echte Ideal in einem Ring mit Einselement ist in einem maximalen Ideal enthalten. (Zornsches Lemma).
 
 
 \paragraph{1.6 Definition} Äquivalenzrelation auf R  % TODO (nachrechnen, klar machen)
@@ -53,9 +53,15 @@ $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
 \paragraph{1.8 Definition}  *$\mathbb{R} = R/M $
 
-\paragraph{1.9 Definition}  
+\paragraph{1.9 Satz} 
+Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
+Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
+der Logik 1. Stufe behält.
+
+
+\paragraph{1.10 Definition}  
 $$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
-Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften: 
+$U $ ist ein $\textit{Filter auf } \mathbb{N} $. Ist $ M $ maximales Ideal so ist $ U_M $ ein $ Ultrafilter $, es gelten: 
 \begin{enumerate}
       \item $ \emptyset \notin U $      
       \item $ \mathbb{N} \in U$ 
@@ -66,18 +72,11 @@ Man bezeichnet $ U_M $ als Ultrafilter, es gelten die folgenden Eigenschaften:
       \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
 \end{enumerate}
 
-\paragraph{1.10 Satz} 
-Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
-Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
-der Logik 1. Stufe behält.
-
-
-
 
 \section{Eigenschaften von *R}
 
 \paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
-sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen
+sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen.
 
 \paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
 $$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
@@ -106,10 +105,10 @@ Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\appr
 \paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
 $ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
 
-\paragraph{2.7 Definition} $ \text{Stetigkeit einer Funktion } f:\mathbb{R} \to \mathbb{R} \text{ im Punkt } x \in \mathbb{R} \\
-\text{seien }\epsilon, \delta  \in \mathbb{R}^+ \text{ und } h \in \mathbb{R} \text{ dann muss gelten:}$
-$$ \forall \epsilon \text{ } \exists \delta \textit{sodass für alle h gilt: } |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
-\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig }
+\paragraph{2.7 Definition} $ \text{Funktion } f:\mathbb{R} \to \mathbb{R} \text{ ist im Punkt } x \in \mathbb{R} \text{ stetig wenn}\\
+\text{für alle }\epsilon \in \mathbb{R}^+, \text{ ein } \delta  \in \mathbb{R}^+ \text{ existiert, sodass für alle } h \in \mathbb{R} \text{ gilt:}$
+$$  |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
+\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig}
 \textit{ falls für alle }\\ h \approx 0 \textit{ gilt:} $
 $$ \text{*}f(x + h) \approx f(x) $$ 
 
