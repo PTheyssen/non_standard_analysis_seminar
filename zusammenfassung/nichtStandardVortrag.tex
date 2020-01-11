@@ -20,26 +20,26 @@
 
 %\paragraph{Im Folgenden seien}
 
-\section{Motivation}
-
 \paragraph{Geschichte:}  
-BEISPIELE an passenden Stellen !!!! \bigskip % TODO
-
 Das Rechnen mit unendlich kleinen und unendlich großen Zahlen wie den Leibnizschen Differentialen
 $ dy $ und $ dx $ in früheren Jahrhunderten der Mathematik und Physik selbstverständlich, 
-aber auch umstritten (Buch von Bischof, Video von Weiz). \\
+aber auch umstritten. Konsitenzfragen wie heute kamen erst später, damals reichte den Mathematikern
+mit solchen Größen zu rechnen und richtige Ergebnisse zu erhalten. \\
 Durch die Epsilontik, den Aufbau der Analysis auf dem Limesbegriff, von Weierstraß wurden diese Größen aus 
 exakten Beweisen verbannt. \\ 
 Abraham Robinson (1961) gibt diesen Größen eine formal korrekte Basis durch Konstruktion von *$\mathbb{R}$.
 
 \bigskip
-TODO: Limes nochmal klar machen Grundlagen der Analysis sollten sitzen 
+TODO: Limes Def
 
+\bigskip
+Vergleich von Limes des Differenzenquotienten und Differentialquotient $ df/dx $:
+$ df/dx $ existiert in *$\mathbb{R} $ immer er muss aber nicht für jedes $ dx $ endlich sein und falls er endlich ist 
+für jedes $ dx $ muss sein Standardteil nicht unabhängig sein von der Wahl von $ dx $, falls dies jedoch der Fall ist 
+existiert der Limes des Differenzenquotienten und ist gleich dem Standardteil von $ df/dx $ 
 
-\paragraph{Differentialquotient:}
-Definition des Differentialquotienten in *$\mathbb{R}$, und diese Größen als Funktionen der Zeit zu sehen,
-da sie variable Größe haben und somit auf die Folgen reeller Zahlen zu kommen.
-
+\paragraph{Vorstellung als Funktion der Zeit} Idee, das die infinitesimalen Größen variabel sind und mit der Zeit ab und zunehmen.
+Daher Darstellung als Funktion der Zeit (könnte man auch kontinuierlich machen aber diskret einfacher)
 
 \section{Konstruktion von *$\mathbb{R}$}
 \paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
@@ -56,7 +56,7 @@ Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division.
 Es sei $ R $ ein Ring. \\ 
 $ \text{Ein} \textit{ Ideal } \text{ in } R \text{ ist eine Teilmenge } I \subseteq R \text{, die bezüglich der Addition 
 eine} \\ \text{Untergruppe ist und folgende Eigenschaft hat:} $
-$$ \forall x \in I, r \in R: xr \in I \text{ und } rx \in I$$
+$$ \forall x \in I, r \in R: xr \in I $$
 Beispielsweise ist der Kern eines Ringhomomorphismus $ \varphi:R \to S $ ein Ideal. 
 
 
@@ -103,6 +103,7 @@ $$ a \equiv b \text{ mod } M \iff a - b \in M $$
       $$ (a - b) + (b - c) = a - c \in M $$
 \end{enumerate}
 
+\paragraph{Definition Faktorring} TODO
 
 \paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
 \begin{proof}
@@ -125,11 +126,11 @@ $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
 \paragraph{Bemerkung} Da jede konstante Folge $ \neq 0 $ in $ R $ invertierbar ist,
 wird der Unterkörper $ \mathbb{R} $ von $ R $ bei der Restklassenbildung nicht beeinträchtigt, das heißt
-wir finden $ \mathbb{R} $ als isomorphes Bild in $ R/M $ wieder.k
+wir finden $ \mathbb{R} $ als isomorphes Bild in $ R/M $ wieder.
 
 \paragraph{1.9 Satz} 
 Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
-Funktion *$f:$*$\mathbb{R}^m \to \mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
+Funktion \\*$f:$*$\mathbb{R}^m \to \text{*}\mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
 der Logik 1. Stufe behält.
 \begin{proof}
       Definiere zu $f:\mathbb{R}^m \to \mathbb{R} $ eine komponentenweise Fortsetzung $ \overline{f} $ durch
@@ -140,17 +141,19 @@ der Logik 1. Stufe behält.
       hier sind die Folgen $ a_1,...,a_m $ Vertreter von gewissen Restklassen in $ R/M $
       Jetzt müssen wir die Wohldefiniertheit zeigen, also das diese Definition nicht von der Wahl 
       der Vertreter in $ R/M $ abhängt. Seien 
-      $$ a_1 \equiv b_2,...,a_m \equiv b_m \text{ mod } M $$ 
+      $$ a_1 \equiv b_1,...,a_m \equiv b_m \text{ mod } M $$ 
       dann ist zu zeigen, dass
       $$ \overline{f}(a_1,...,a_m) \equiv \overline{f}(b_1,...,b_m) \text{ mod } M $$
-      Zunächst betrachten wir das ganze nur für das Ideal $ D $, und wollen dann den Beweis für beliebige Ideale führen
+      Zunächst betrachten wir das ganze nur für das Ideal $ D $, und wollen dann den Beweis für beliebige Ideale führen,
       dafür werden wir die Definition des Ultrafilters nutzen. \\
+      
+
       Fall $ D $ ist das Ideal: \\
       $ a \equiv b \text{ mod } D $ bedeutet $ a^{(n)} = b^{(n)} $ für fast alle $ n $ (für alle bis auf endlich viele)
       dann gilt aber auch ffa $ n \in \mathbb{N} $:
       $$ a^{(n)}_1 = b^{(n)}_1 \text{ und }...\text{ und } a^{(n)}_m = b^{(n)}_m $$ 
       also gilt für ffa $ n $ 
-      $$  f(a^{(n)}_1,...,a^{n}_m) = f(b^{(n)}_1,...,b^{n}_m) $$
+      $$  f(a^{(n)}_1,...,a^{(n)}_m) = f(b^{(n)}_1,...,b^{(n)}_m) $$
       woraus folgt, dass $ \overline{f}(a_1,...,a_m) \equiv \overline{f}(b_1,...,b_m) \text{ mod } D $
 
 \end{proof}
@@ -160,19 +163,71 @@ $$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} =
 $U $ Ist ein Filter auf $ \mathbb{N} $. Ist $ M $ maximales Ideal so ist $ U_M $ ein Ultrafilter, es gelten die folgenden Eigenschaften: 
 
 \begin{enumerate}
+      \item[ ] Hier $ M $ beliebiges Ideal und $ U $ Filter
       \item $ \emptyset \notin U $      
       \item $ \mathbb{N} \in U$ 
       \item $ Z_1, Z_2 \in U \Rightarrow Z_1 \cap Z_2 \in U$ 
       \item $ Z \in U, \text{ } Z \subset A \subset \mathbb{N} \Rightarrow A \in U$ 
+      \item[ ] Ab hier $ M $ maximales Ideal und $ U_M $ Ultrafilter
       \item $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
       \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
+      \item[ ] Hier $ M $ wieder beliebiges Ideal und $ U $ Filter 
       \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
 \end{enumerate}
-\begin{proof}
-      TODO: Eigenschaften einzeln Nachweisen
+
+\begin{proof} $ \text{ } $
+\begin{enumerate}
+     \item[ ] Hier $ M $ beliebiges Ideal und $ U $ Filter 
+     \item: Nullfolge ist in $ M $ da M Ideal von $ R $ somit ist $ \mathbb{N} \in U $ 
+     \item: siehe (i)  
+     \item: Seien $ a $ und $ b $ zwei Folgen in $ R/M $ und $ c = a^2 + b^2 $   
+            dann ist $ Z(c) = Z(a) \cap Z(b) $
+     \item: Sei $ a \in M $ eine Folge mit $ Z(a) = Z $ und $ r \in R, r \neq 0 $ mit $ A = Z(r) $. 
+            Da $ a $ Teilmenge von $ r $ ist hat sie an keiner Stelle eine $ 0 $ an der $ r $ nicht auch eine $ 0 $ hat 
+            mit der Ideal Eigenschaft folgt sofort $ ar \in M \Rightarrow Z(ar) = A \in U $  
+            \bigskip
+     \item[ ] Ab hier $ M $ maximales Ideal und $ U_M $ Ultrafilter
+     \item: Wähle Folge $ a $ aus Nullen und Einsen, so dass $ Z(a) = A $. \\ 
+            Angenommen $ A \notin U $ also $ a \notin M $, da M maximal ist existiert $ b \in M $ und $ c \in R $ mit 
+            $ 1 = b + ac $. Daher $ Z(b) = Z(1 - ac) \subset \mathbb{N} \setminus A $  
+            Wegen $ b \in M $ ist $ Z(b) \in U $ mit (iv) erhält man $ \mathbb{N} \setminus A \in U $.
+            \bigskip
+     \item:     TODO
+     \item: Generell gilt  $$ a \in M \iff Z(a) \in U $$ 
+            Wir müssen $ \Leftarrow $ zeigen, ($ \Rightarrow $ ergibt sich wegen der Definition von U).
+            Sei $ Z(a) \in U $ wir müssen zeigen, dass $ a \in M $ ist.
+            Da $ Z(a) \in U $ ist muss es ein $ b \in M $ geben mit $ Z(a) = Z(b) $ also haben $ a $ und $ b $ 
+            die gleichen 0-Stellen. Wir definieren die Folge $ c = (c^{(n)})_{n\in \mathbb{N}} $
+            $$ 
+            c^{(n)} = 
+                  \begin{cases}
+                     a^{(n)} / b^{(n)} \text{ für } n \notin Z(b) \\
+                     0  \text{ sonst}   
+                  \end{cases}
+            $$
+            Dann gilt $ a = bc \in M $ \\
+            Es gilt $ Z(a -b) = \{n: a^{(n)} = b^{(n)}\} $ somit ergibt sich für $ a,b \in R $ die Eigenschaft
+            $$ a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M $$
+
+
+\end{enumerate}
 \end{proof}
 
+\paragraph{Unabhängigkeitsbeweis für beliebige Ideale}
+Es gilt $ a_i \equiv b_i \text{ mod } M $ für $ 1 \leqslant i \leqslant m $ und damit auch $ \{n: a^{(n)}_i = b^{(n)}_i\} \in U $ für 
+$ 1 \leqslant i \leqslant m $. Damit gilt auch
+$$ \bigcap_{i = 1}^m \{n: a^{(n)}_i = b^{(n)}_i\} = \{n: a^{(n)}_1 = b^{(n)}_1,...,a^{(n)}_m = b^{(n)}_m\} \in U $$
+Außerdem gilt, weil eine Funktion einem Element immer das gleiche Element zuordnet (rechtseindeutig). 
+$$ \{n: a^{(n)}_1 = b^{(n)}_1,...,a^{(n)}_m = b^{(n)}_m\} \subset \{n: f(a^{(n)_1,...,a^{n}_m}) = f(b^{(n)_1,...,b^{n}_m})\} $$
+mit (iv) folgt daraus
+$$ \{n: f(a^{(n)_1,...,a^{n}_m}) = f(b^{(n)_1,...,b^{n}_m})\} \in U $$ 
+Mit (vi) sind 
+$$ \text{*}f(a_1,...,a_m) \equiv \text{*}f(b_1,...,b_m) \text{ mod } M $$ 
 
+
+\paragraph{Fortsetzung zweier Funktionen}
+Es gilt für zwei Funktionen $ f $ und $ g $:
+$$ \text{*}(f g) = \text{*}f \text{*}g$$
 \section{Eigenschaften von *R}
 
 \paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
@@ -184,7 +239,7 @@ sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen
 \paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
 $$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
 \begin{proof}
-      TODO: mithilfe von *$| | $ 
+      TODO: mithilfe von *$|\text{ } | $ 
 \end{proof}
 
 \paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
@@ -216,7 +271,7 @@ Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfra
 $$a \approx b \iff a - b \in \textfrak{M}$$
 Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
 \begin{proof}
-      TODO: Beispiele aus elementary Calculus
+      TODO: Ein Beispiel aus elementary Calculus
 \end{proof}
 
 \paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
