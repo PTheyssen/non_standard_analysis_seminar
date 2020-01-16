@@ -16,7 +16,12 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
+\begin{center}
+      \LARGE Nichtstandard Analysis 1\\
+      \normalsize 21.1.2020\\
+      Klaus Philipp Theyssen
+\end{center}
 
 %\paragraph{Im Folgenden seien}
 
@@ -28,17 +33,17 @@
 \section{Konstruktion von *$\mathbb{R}$}
 \paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
 \begin{enumerate}
-      \item Addition, Subtraktion und Multiplikation Komponentenweise, für $a, b \in R$  
-            $$ (a_1 \pm b_1, a_2 \pm b_2,...) \text{ und } (a_1 * b_1, a_2 * b_2,...) $$ 
+      \item Addition, Subtraktion und Multiplikation komponentenweise, für $a, b \in R$  
+            $$ (a^{(1)} \pm b^{(1)}, a^{(2)} \pm b^{(2)},...) \text{ und } (a^{(1)} * b^{(1)}, a^{(2)} * b^{(2)},...) $$ 
      % \item Die Reellen Zahlen werden kanonisch in R eingebettet, für $ r \in \mathbb{R} $ 
      %       $$ r \mapsto (r,r,r,...) $$
 \end{enumerate}
 \smallskip
-Wir wollen aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
+Wir wollen aus R den Körper *$\mathbb{R}$ konstruieren, dafür fehlt uns die Division. 
 
 % \paragraph{1.2 Definition} Ideal
 
-\paragraph{1.3 Definition} Sei D ein Ideal in R, für das gilt:  
+\paragraph{1.3 Definition} Sei D das Ideal in R, für das gilt:  
       $$ a \in D \iff a^{(n)} = 0 \text{ für fast alle } n \in \mathbb{N}  $$
 
 % \paragraph{1.4 Definition} maximales Ideal
@@ -51,26 +56,32 @@ $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
 \paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
 
-\paragraph{1.8 Definition}  *$\mathbb{R} = R/M $
+\paragraph{1.8 Definition}  Der Non-Standard Zahlenbereich: *$\mathbb{R} = R/M $
 
 \paragraph{1.9 Satz} 
 Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
-Funktion *$f:$*$\mathbb{R}^m \to \text{*}\mathbb{R}$ fortsetzen, sodass sie Eigenschaften im Rahmen 
-der Logik 1. Stufe behält.
+Funktion *$f:$*$\mathbb{R}^m \to \text{*}\mathbb{R}$ fortsetzen, sodass sie Eigenschaften die im Rahmen 
+der Logik 1. Stufe ausdrückbar sind behält.
 
 
 \paragraph{1.10 Definition}  
 $$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
-$U $ ist ein $\textit{Filter auf } \mathbb{N} $. Ist $ M $ maximales Ideal so ist $ U_M $ ein $ Ultrafilter $, es gelten: 
+$U $ ist ein $\textit{Filter auf } \mathbb{N} $, es gelten die folgenden Eigenschaften: 
 \begin{enumerate}
       \item $ \emptyset \notin U $      
       \item $ \mathbb{N} \in U$ 
       \item $ Z_1, Z_2 \in U \Rightarrow Z_1 \cap Z_2 \in U$ 
       \item $ Z \in U, \text{ } Z \subset A \subset \mathbb{N} \Rightarrow A \in U$ 
+
+\end{enumerate}
+Ist $ M $ maximales Ideal so ist $ U_M $ ein $ Ultrafilter $, es gelten zusätzlich: 
+\begin{enumerate}
       \item $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
       \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
-      \item $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
 \end{enumerate}
+
+\paragraph{Folgerung} $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
+
 
 
 \section{Eigenschaften von *R}
@@ -78,12 +89,12 @@ $U $ ist ein $\textit{Filter auf } \mathbb{N} $. Ist $ M $ maximales Ideal so is
 \paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
 sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen.
 
-\paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
+\paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element $ \omega $ das größer als alle reellen Zahlen ist. 
 $$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
 
 \paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
 Ist echter konvexer Teilring von *$\mathbb{R}$, die Elemente von \textfrak{D} nennt man $ endliche $ Größen. \\
-Konvexität meint hier:
+Konvexität bedeutet hier:
 $$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
 
 \paragraph{2.4 Definition} $ \textfrak{M} = \{a \in \text{*}\mathbb{R}: |a| \leqslant \epsilon, \text{ für alle } \epsilon \in \mathbb{R}^+ \} $
@@ -99,17 +110,18 @@ Die Elemente von \textfrak{M} bezeichnen wir als $ unendliche \text{ } kleine $ 
 Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfrak{D} sind bezeichnen wir als $ unendliche $ oder $ infinite $ Größen.
 
 \paragraph{2.5 Definition} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
-$$a \approx b \iff a - b \in \textfrak{M}$$
+$$ a - b \in \textfrak{M}, \text{ wir schreiben } a \approx b$$
 Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
 
 \paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
 $ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
 
-\paragraph{2.7 Definition} $ \text{Funktion } f:\mathbb{R} \to \mathbb{R} \text{ ist im Punkt } x \in \mathbb{R} \text{ stetig wenn}\\
+\paragraph{2.7 Definition} $ \text{Eine Funktion } f:\mathbb{R} \to \mathbb{R} \text{ ist im Punkt } x \in \mathbb{R} \text{ stetig wenn}\\
 \text{für alle }\epsilon \in \mathbb{R}^+, \text{ ein } \delta  \in \mathbb{R}^+ \text{ existiert, sodass für alle } h \in \mathbb{R} \text{ gilt:}$
 $$  |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
-\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig}
-\textit{ falls für alle }\\ h \approx 0 \textit{ gilt:} $
+
+\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ genau dann stetig,}
+\textit{ wenn für alle }\\ h \approx 0 \textit{ gilt:} $
 $$ \text{*}f(x + h) \approx f(x) $$ 
 
 \end{document}

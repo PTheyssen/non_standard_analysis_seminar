@@ -16,7 +16,7 @@
 
 \begin{document}
 
-\maketitle
+%\maketitle
 
 %\paragraph{Im Folgenden seien}
 
@@ -28,15 +28,6 @@ mit solchen Größen zu rechnen und richtige Ergebnisse zu erhalten. \\
 Durch die Epsilontik, den Aufbau der Analysis auf dem Limesbegriff, von Weierstraß wurden diese Größen aus 
 exakten Beweisen verbannt. \\ 
 Abraham Robinson (1961) gibt diesen Größen eine formal korrekte Basis durch Konstruktion von *$\mathbb{R}$.
-
-\bigskip
-TODO: Limes Def
-
-\bigskip
-Vergleich von Limes des Differenzenquotienten und Differentialquotient $ df/dx $:
-$ df/dx $ existiert in *$\mathbb{R} $ immer er muss aber nicht für jedes $ dx $ endlich sein und falls er endlich ist 
-für jedes $ dx $ muss sein Standardteil nicht unabhängig sein von der Wahl von $ dx $, falls dies jedoch der Fall ist 
-existiert der Limes des Differenzenquotienten und ist gleich dem Standardteil von $ df/dx $ 
 
 \paragraph{Vorstellung als Funktion der Zeit} Idee, das die infinitesimalen Größen variabel sind und mit der Zeit ab und zunehmen.
 Daher Darstellung als Funktion der Zeit (könnte man auch kontinuierlich machen aber diskret einfacher)
@@ -50,14 +41,16 @@ Daher Darstellung als Funktion der Zeit (könnte man auch kontinuierlich machen 
             $$ r \mapsto (r,r,r,...) $$
 \end{enumerate}
 \smallskip
-Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. 
+Nun wollen wir aus R den Körper *R konstruieren, dafür fehlt uns die Division. \\
+
+TODO: Warum funktioniert Division nicht ? 
 
 \paragraph{1.2 Definition} Ideal \\
 Es sei $ R $ ein Ring. \\ 
 $ \text{Ein} \textit{ Ideal } \text{ in } R \text{ ist eine Teilmenge } I \subseteq R \text{, die bezüglich der Addition 
 eine} \\ \text{Untergruppe ist und folgende Eigenschaft hat:} $
 $$ \forall x \in I, r \in R: xr \in I $$
-Beispielsweise ist der Kern eines Ringhomomorphismus $ \varphi:R \to S $ ein Ideal. 
+TODO WARUM      Beispielsweise ist der Kern eines Ringhomomorphismus $ \varphi:R \to S $ ein Ideal. 
 
 
 \paragraph{1.3 Definition} Sei D ein Ideal in R, für das gilt:  
@@ -217,10 +210,10 @@ $U $ Ist ein Filter auf $ \mathbb{N} $. Ist $ M $ maximales Ideal so ist $ U_M $
 Es gilt $ a_i \equiv b_i \text{ mod } M $ für $ 1 \leqslant i \leqslant m $ und damit auch $ \{n: a^{(n)}_i = b^{(n)}_i\} \in U $ für 
 $ 1 \leqslant i \leqslant m $. Damit gilt auch
 $$ \bigcap_{i = 1}^m \{n: a^{(n)}_i = b^{(n)}_i\} = \{n: a^{(n)}_1 = b^{(n)}_1,...,a^{(n)}_m = b^{(n)}_m\} \in U $$
-Außerdem gilt, weil eine Funktion einem Element immer das gleiche Element zuordnet (rechtseindeutig). 
-$$ \{n: a^{(n)}_1 = b^{(n)}_1,...,a^{(n)}_m = b^{(n)}_m\} \subset \{n: f(a^{(n)_1,...,a^{n}_m}) = f(b^{(n)_1,...,b^{n}_m})\} $$
+Außerdem gilt, weil eine Funktion (rechtseindeutig): 
+$$ \{n: a^{(n)}_1 = b^{(n)}_1,...,a^{(n)}_m = b^{(n)}_m\} \subset \{n: f(a^{(n)}_1,...,a^{(n)}_m) = f(b^{(n)}_1,...,b^{(n)}_m)\} $$
 mit (iv) folgt daraus
-$$ \{n: f(a^{(n)_1,...,a^{n}_m}) = f(b^{(n)_1,...,b^{n}_m})\} \in U $$ 
+$$ \{n: f(a^{(n)}_1,...,a^{(n)}_m) = f(b^{(n)}_1,...,b^{(n)}_m)\} \in U $$ 
 Mit (vi) sind 
 $$ \text{*}f(a_1,...,a_m) \equiv \text{*}f(b_1,...,b_m) \text{ mod } M $$ 
 
@@ -233,13 +226,44 @@ $$ \text{*}(f g) = \text{*}f \text{*}g$$
 \paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
 sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen
 \begin{proof}
-      TODO: Eigenschaften einzeln Nachweisen
+      Sei $ M $ ein maximales Ideal über $ D $, damit ist sichergestellt, dass *$\mathbb{R} = R/M $ ein Körper ist.
+      Für $ a,b \in R $ setzen wir 
+      $$ a \leqslant b \text{ mod } M :\iff \{n: a^{(n)} \leqslant b^{(n)}\} \in U_M $$ 
+      Das bedeutet die Beziehung $ a\leqslant b $ mod $ M $ soll gelten, falls die entsprechende Eigenschaft
+      für sehr viele Komponenten gilt. 
+      Es bleibt wieder zu zeigen, dass die Definition unabhängig von den Vertretern ist. \\
+      Sei also $ a \equiv a_1 $ und $ b \equiv b_1 $ mod $ M $ dann gilt 
+      $$ \{n: a^{(n)} \leqslant b^{(n)}\} \cap \{n: a^{(n)} = a^{(n)}_1\} \cap \{n: b^{(n)} = b^{(n)}_1\} \subset \{n: a^{(n)}_1 \leqslant b^{(n)}_1\} $$
+      Mit Voraussetzung und mit (iii) ist die linke Seite in $ U $ und dann mit (iv) auch die rechte.
+
+      \bigskip
+      Mit den Eigenschaften (v) und (iv) von $ U $ folgt für beliebige $ a,b \in R: $
+      $$ \{n: a^{(n)} \leqslant b^{(n)}\} \in U \text{ oder } \{n: b^{(n)} \leqslant a^{(n)}\} \in U $$
 \end{proof}
+
+\paragraph{Eigenschaften Anordnung} Beweise mithilfe der Filter-Eigenschaften von $ U_M $
+\begin{enumerate}
+     \item $ a \leqslant a $ \\
+            Beweis: hier ist $ a^{(n)} = a ^{(n)} $ und damit folgt die schwächere Aussage 
+     \item $ a \leqslant b, b \leqslant a \Rightarrow a = b $ \\
+            Beweis: $ \forall n $ gilt $ a^{(n)} \leqslant b^{(n)} $ und $ b^{(n)} \leqslant a^{(n)} $ also muss 
+            $ \forall n $ gelten $ a^{(n)} = b^{(n)} $ und damit $ a = b $
+     \item $ a \leqslant b, b \leqslant c \Rightarrow a \leqslant c $ \\
+            Beweis:  folgt durch Betrachtung der einzelnen Elemente der Folgen
+     \item $ a \leqslant b \Rightarrow a + c \leqslant b + c $ \\ 
+            Beweis:  folgt durch Betrachtung der einzelnen Elemente der Folgen
+     \item $ 0 \leqslant a, 0 \leqslant b \Rightarrow 0 \leqslant ab $ \\
+            Beweis:  folgt durch Betrachtung der einzelnen Elemente der Folgen
+
+\end{enumerate}
+
 
 \paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element das größer als alle reellen Zahlen ist. 
 $$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
 \begin{proof}
-      TODO: mithilfe von *$|\text{ } | $ 
+      Wegen (vi) gilt $ \{n: r^{(n)} \leqslant \omega^{(n)} \} = \{n: r \leqslant n\} \in U_M $. \\
+      $ \{n: r \leqslant n\} $ hat unendlich viele Elemente, wenn $ r = 0 $ ist, dann $ \{n: r \leqslant n\} = \mathbb{N} $, 
+      damit ist $ | \mathbb{N} \setminus A | < \infty $ da r konstant und somit nur endlich viele Folgenglieder größer als $ \omega $  
 \end{proof}
 
 \paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
@@ -247,7 +271,26 @@ Ist echter konvexer Teilring von *$\mathbb{R}$, die Elemente von \textfrak{D} ne
 Konvexität meint hier:
 $$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
 \begin{proof}
-      TODO: Nachrechnen
+      Für die Definition haben wir die Fortsetzung *$| \text{ }|$ des Absolutbetrages der reellen Zahlen verwendet. 
+      $$
+      \text{*}|a| = 
+            \begin{cases} 
+                  a, \text{ falls } 0 \leqslant a \\
+                  -a, \text{ falls } a \leqslant 0
+            \end{cases} 
+      $$
+
+      \smallskip
+      Das die Definition von *$|\text{ }|$ Sinn macht sieht man so ein: Gilt für eine Folge $ 0 \leqslant a $ 
+      dann heißt das $ \{n: 0 \leqslant a^{(n)}\} \in U $ dann ist 
+      aber auch die Obermenge $ \{n: |a^{(n)}| = a^{(n)}\} $ Element von $ U $. Mit (vii) folgt
+      $ |a| \equiv a \text{ mod } M $. \\
+      ($a \leqslant 0 $ lässt sich analog schließen) \\
+
+      \smallskip
+      Die Gleichung und die Ungleichung müsste man modulo $ M $ verstehen, wollen wir aber im folgenden weglassen und 
+      $ M $ fest gewählt haben.
+
 \end{proof}
 
 
@@ -261,40 +304,92 @@ $$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
       \item $0 \leqslant b \leqslant a \in \textfrak{M} \Rightarrow b \in \textfrak{M} $ 
 \end{enumerate}
 \begin{proof}
-      TODO: Nachrechnen
-\end{proof}
+      \textfrak{M} besteht nicht nur aus der Null, denn wegen $ n \leqslant \omega $ folgt
+      $ 0 \leqslant 1/\omega \leqslant 1/n $ für alle $ n \in \mathbb{N} $ also ist $ 1/\omega \in \textfrak{M} $. \\
+
+      \end{proof}
 
 Die Elemente von \textfrak{M} bezeichnen wir als $ unendliche \text{ } kleine $ oder $ infinitesimale $ Größen. 
 Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfrak{D} sind bezeichnen wir als $ unendliche $ oder $ infinite $ Größen.
 
+\bigskip
+TODO: Skizze aus elementary calculus 
 \paragraph{2.5 Definition} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
 $$a \approx b \iff a - b \in \textfrak{M}$$
 Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
 \begin{proof}
-      TODO: Ein Beispiel aus elementary Calculus
+      TODO: Ein Beispiel
 \end{proof}
 
 \paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
 $ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
 \begin{proof}
-      TODO: Beweis 
+      \textit{Existenz} \\
+      Wir betrachten die Mengen $ X_a = \{r \in \mathbb{R}: r \leqslant a\} $ und  
+      $ Y_a = \{s \in \mathbb{R}: a \leqslant s\} $ damit definieren $ X_a $ und $ Y_a $ einen Schnitt in $ \mathbb{R} $.
+      Wegen der Schnittvollständigkeit von $ \mathbb{R} $ gibt es ein $ t \in \mathbb{R} $ mit $ r \leqslant t \leqslant s $ 
+      für $ r \in X_a, s \in Y_a $. Damit erhält man $ |t - a| \leqslant \epsilon $ für alle $ \epsilon \in \mathbb{R}^+ $.
+      Also $ a \approx t \in \mathbb{R} $
+
+      \bigskip
+      \textit{Eindeutigkeit} \\
+      Angenommen es sei $ t_1 \approx a \approx t_2 $ für $ t_1, t_2 \in \mathbb{R} $ dann folgt $ t_1 \approx t_2 $ 
+      das heißt $ |t_1 - t_2| < \epsilon $ für alle $ \epsilon \in \mathbb{R}^+ $. Das ist nur für $ t_1 - t_2 = 0 $ möglich.
 \end{proof}
+
+\paragraph{Anmerkung}
+$st: \textfrak{D} \to \mathbb{R} $ ist ein ordnungserhaltender Ringhomomorphismus mit Kern \textfrak{M}
+und st$|\mathbb{R} =$ id. Daraus folgt das wir mit den endlichen Größen in *$\mathbb{R} $ alle Körperoperationen 
+dürchführen können wenn wir $ \approx $ statt $ = $ schreiben und nur durch $ a \in \textfrak{D} $ dividieren 
+wenn gilt $ a \not \approx 0 $.
 
 
 \paragraph{2.7 Definition} $ \text{Stetigkeit einer Funktion } f:\mathbb{R} \to \mathbb{R} \text{ im Punkt } x \in \mathbb{R} \\
 \text{seien }\epsilon, \delta  \in \mathbb{R}^+ \text{ und } h \in \mathbb{R} \text{ dann muss gelten:}$
 $$ \forall \epsilon \text{ } \exists \delta \textit{sodass für alle h gilt: } |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
+
+Alternative Definiton:
+$$ \forall \epsilon > 0 \exists \delta > 0 \forall x \in \mathbb{R}: (|x - x_0|) < \delta \Rightarrow |f(x) - f(x_0) | < \epsilon)$$
 \begin{proof}
-      TODO: klarmachen, Skizze vorbereiten und andere Definitionen anschauen zum beispiel mit $ x - x_0 $ 
+      
+      TODO: Skizze
 \end{proof}
 
 
 
 \paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ stetig }
-\textit{ falls für alle }\\ h \approx 0 \textit{ gilt:} $
+\iff \\ \textit{ für alle } h \approx 0 \textit{ gilt:} $
 $$ \text{*}f(x + h) \approx f(x) $$ 
 \begin{proof}
-      TODO: Beweis 
+      Beweis $ \Rightarrow $: \\
+      $ f $ lässt sich zu Funktion *$f: \text{*}\mathbb{R} \to \text{*}\mathbb{R} $ fortsetzen sodass für 
+      $ a = (a^{(n)})_{n\in\mathbb{N}} $ gilt 
+      $$ \text{*}f(a) \equiv (f(a^{(n)}))_{n\in\mathbb{N}} \text{ mod } M $$
+      Jetzt betrachten wir $ h \in \text{*}\mathbb{R} $ mit $ |h| \leqslant \delta $.
+      Es gilt $ \{n: |h^{(n)}| \leqslant \delta\} \in U $. Wegen der Stetigkeit von $ f $ gilt
+      $ \{n: |h^{(n)}| \leqslant \delta\} \subset \{n: |f(x + h^{(n)}) - f(x)) \leqslant \epsilon\} $ 
+      und wegen Filter-Eigenschaft (iv) ist auch die letztere Menge in $ U $, das 
+      heißt es gilt $ |\text{*}f(x + h) - \text{*}f(x)| \leqslant \epsilon $. Ist $ h \in \textfrak{M} $ 
+      (also $ h \approx 0 $) so ist $ |h| \leqslant \delta $ für alle $ \delta \in \mathbb{R}^+ $ richtig. 
+
+      Damit auch die Folgerung das $ |\text{*}f(x + h) - \text{*}f(x)| \leqslant \epsilon $ für alle
+      $ \epsilon \in  \mathbb{R}^+ $ gilt. Somit unterscheiden sich $ \text{*}f(x + h) $ und $  \text{*}f(x) $ nur
+      um eine infinitesimale Größe, was heißt:
+      $$ \text{*}f(x + h) \approx *f(x) $$
+
+      Beweis $ \Leftarrow $: durch Kontraposition \\
+      Wir nehmen also an $ f $ ist in $ x $ nicht stetig. 
+      $$ \exists \epsilon \forall \delta \exists h: |h| \leqslant \delta \wedge |f(x + h) - f(x)| \geq \epsilon $$
+      Dann gibt es ein $ \epsilon \in \mathbb{R}^+ $, sodass 
+      zu jedem $ n \in \mathbb{N} $ ein $ h^{(n)} \in \mathbb{R} $ existiert mit $ |h^{(n)}| \leqslant \frac{1}{n} $
+      und $ |f(x + h^{(n)}) - f(x)| \geq \epsilon $. 
+      Setzen wir nun $ h = (h^{(n)})_{n\in\mathbb{N}} $ so gilt $ |h| \leqslant 1/\omega $ wegen 
+      $ 1/\omega \in \textfrak{M} $ gilt auch $ h \in \textfrak{M} $, d.h. $ h \approx 0 $.
+      Wir haben $ h^{(n)} $ so gewählt das gilt $ \mathbb{N} = \{ |f(x + h^{(n)}) - f(x)| \geq \epsilon \} \in U $,
+      das heißt $ |f(x + h) - f(x)| \geq \epsilon $ das ist ein Widerspruch zur Vorraussetzung 
+      $\text{*}f(x + h) \approx f(x) $ für $ h \approx 0$. 
+
+
 \end{proof}
 
 
