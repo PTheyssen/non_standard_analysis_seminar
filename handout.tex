@@ -18,7 +18,7 @@
 
 %\maketitle
 \begin{center}
-      \LARGE Nichtstandard Analysis 1\\
+      \Large Nichtstandard Analysis 1\\
       \normalsize 21.1.2020\\
       Klaus Philipp Theyssen
 \end{center}
@@ -31,7 +31,7 @@
 %Motivation durch Differentialquotienten.
 
 \section{Konstruktion von *$\mathbb{R}$}
-\paragraph{1.1 Definition} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
+\paragraph{Definition 1.1} $ R \text{ ist der Ring der Folgen }  a = (a^{(n)})_{n \in \mathbb{N}} \text{ reeller Zahlen} $
 \begin{enumerate}
       \item Addition, Subtraktion und Multiplikation komponentenweise, für $a, b \in R$  
             $$ (a^{(1)} \pm b^{(1)}, a^{(2)} \pm b^{(2)},...) \text{ und } (a^{(1)} * b^{(1)}, a^{(2)} * b^{(2)},...) $$ 
@@ -43,28 +43,28 @@ Wir wollen aus R den Körper *$\mathbb{R}$ konstruieren, dafür fehlt uns die Di
 
 % \paragraph{1.2 Definition} Ideal
 
-\paragraph{1.3 Definition} Sei D das Ideal in R, für das gilt:  
+\paragraph{Definition 1.3} Sei D das Ideal in R, für das gilt:  
       $$ a \in D \iff a^{(n)} = 0 \text{ für fast alle } n \in \mathbb{N}  $$
 
 % \paragraph{1.4 Definition} maximales Ideal
 
-\paragraph{1.5 Satz} Jedes echte Ideal in einem Ring mit Einselement ist in einem maximalen Ideal enthalten. (mithilfe des Zornsches Lemma).
+\paragraph{Satz 1.5} Jedes echte Ideal in einem Ring mit Einselement ist in einem maximalen Ideal enthalten. (mithilfe des Zornsches Lemma).
 
 
-\paragraph{1.6 Definition} Äquivalenzrelation auf R  % TODO (nachrechnen, klar machen)
+\paragraph{Definition 1.6} Äquivalenzrelation auf R  % TODO (nachrechnen, klar machen)
 $$ a \equiv b \text{ mod } M \iff a - b \in M $$
 
-\paragraph{1.7 Satz} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
+\paragraph{Satz 1.7} $ I \text{ maximal } \iff R/I  \text{ ist ein Körper} $
 
-\paragraph{1.8 Definition}  Der Non-Standard Zahlenbereich: *$\mathbb{R} = R/M $
+\paragraph{Definition 1.8}  Der Non-Standard Zahlenbereich: *$\mathbb{R} = R/M $
 
-\paragraph{1.9 Satz} 
+\paragraph{Satz 1.9} 
 Jede Funktion $f:\mathbb{R}^m \to \mathbb{R} $ lässt sich zu einer 
 Funktion *$f:$*$\mathbb{R}^m \to \text{*}\mathbb{R}$ fortsetzen, sodass sie Eigenschaften die im Rahmen 
 der Logik 1. Stufe ausdrückbar sind behält.
 
 
-\paragraph{1.10 Definition}  
+\paragraph{Definition 1.10}  
 $$ U = U_M = \{Z(a): a \in M\} \text{ mit } Z(a) = \{n \in \mathbb{N}: a^{(n)} = 0\} $$
 $U $ ist ein $\textit{Filter auf } \mathbb{N} $, es gelten die folgenden Eigenschaften: 
 \begin{enumerate}
@@ -76,28 +76,30 @@ $U $ ist ein $\textit{Filter auf } \mathbb{N} $, es gelten die folgenden Eigensc
 \end{enumerate}
 Ist $ M $ maximales Ideal so ist $ U_M $ ein $ Ultrafilter $, es gelten zusätzlich: 
 \begin{enumerate}
-      \item $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
-      \item $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
+      \item[(v)] $ A \subset  \mathbb{N} \Rightarrow A \in U \text{ oder } \mathbb{N} \setminus A \in U$ 
+      \item[(vi)] $ A \subset  \mathbb{N}, \text{ } |\mathbb{N} \setminus A| < \infty \Rightarrow A \in U$ 
 \end{enumerate}
 
-\paragraph{Folgerung} $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
+\paragraph{Hilfssatz 1.11} $a \equiv b \text{ mod } M \iff \{n: a^{(n)} = b^{(n)}\} \in U_M$
 
 
 
 \section{Eigenschaften von *R}
 
-\paragraph{2.1 Satz} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
-sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen.
+\paragraph{Satz 2.1} Die Anordnung $\leqslant$ der reellen Zahlen lässt 
+sich zu einer Anordnung von *$\mathbb{R}$ fortsetzen. Für $ a,b \in R $ setzen wir
+$$ a \leqslant b \text{ mod } M :\iff \{n: a^{(n)} \leqslant b^{(n)}\} \in U_M $$ 
 
-\paragraph{2.2 Satz} *$\mathbb{R}$ besitzt ein Element $ \omega $ das größer als alle reellen Zahlen ist. 
+
+\paragraph{Satz 2.2} *$\mathbb{R}$ besitzt ein Element $ \omega $ das größer als alle reellen Zahlen ist. 
 $$ \forall r \in \mathbb{R} : r \leqslant \omega \text{ mod } M \text{, } \omega = (1,2,3,...,n,n+1,...) $$
 
-\paragraph{2.3 Definition} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
+\paragraph{Definition 2.3} $ \textfrak{D} = \{a \in \text{*}\mathbb{R}: |a| \leqslant r, \text{ für ein } r \in \mathbb{R}\} $ \\
 Ist echter konvexer Teilring von *$\mathbb{R}$, die Elemente von \textfrak{D} nennt man $ endliche $ Größen. \\
 Konvexität bedeutet hier:
 $$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
 
-\paragraph{2.4 Definition} $ \textfrak{M} = \{a \in \text{*}\mathbb{R}: |a| \leqslant \epsilon, \text{ für alle } \epsilon \in \mathbb{R}^+ \} $
+\paragraph{Definition 2.4} $ \textfrak{M} = \{a \in \text{*}\mathbb{R}: |a| \leqslant \epsilon, \text{ für alle } \epsilon \in \mathbb{R}^+ \} $
 
 \bigskip
 \textfrak{M} ist konvexes Ideal in \textfrak{D}, sodass folgende Eigenschaften erfüllt sind 
@@ -109,18 +111,18 @@ $$ 0 \leqslant b \leqslant a \in \textfrak{D} \Rightarrow b \in \textfrak{D} $$
 Die Elemente von \textfrak{M} bezeichnen wir als $ unendliche \text{ } kleine $ oder $ infinitesimale $ Größen. 
 Alle anderen Elemente von *$\mathbb{R}$, die nicht in \textfrak{M} oder \textfrak{D} sind bezeichnen wir als $ unendliche $ oder $ infinite $ Größen.
 
-\paragraph{2.5 Definition} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
+\paragraph{Definition 2.5} $a,b \in \text{*}\mathbb{R} \text{ heißen } benachbart \text{ wenn gilt:} $
 $$ a - b \in \textfrak{M}, \text{ wir schreiben } a \approx b$$
 Das heißt a und b unterscheiden sich nur um eine infinitesimale Größe, $\approx$ ist eine Äquivalenzrelation auf *$\mathbb{R}$
 
-\paragraph{2.6 Satz} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
+\paragraph{Satz 2.6} $ \textit{Jede endliche Größe } a \in \text{*}\mathbb{R} \textit{ ist zu genau einer reellen Zahl r benachbart.}$
 $ \textit{r wird dann als der Standardteil } \text{st}(a) \textit{ von a bezeichnet.} $
 
-\paragraph{2.7 Definition} $ \text{Eine Funktion } f:\mathbb{R} \to \mathbb{R} \text{ ist im Punkt } x \in \mathbb{R} \text{ stetig wenn}\\
+\paragraph{Definition 2.7} $ \text{Eine Funktion } f:\mathbb{R} \to \mathbb{R} \text{ ist im Punkt } x \in \mathbb{R} \text{ stetig wenn}\\
 \text{für alle }\epsilon \in \mathbb{R}^+, \text{ ein } \delta  \in \mathbb{R}^+ \text{ existiert, sodass für alle } h \in \mathbb{R} \text{ gilt:}$
 $$  |h| \leqslant \delta \Rightarrow |f(x + h) - f(x)| \leqslant \epsilon $$ 
 
-\paragraph{2.8 Satz} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ genau dann stetig,}
+\paragraph{Satz 2.8} $ \textit{Die Funktion } f:\mathbb{R} \to \mathbb{R} \textit{ ist im Punkt } x \in \mathbb{R} \textit{ genau dann stetig,}
 \textit{ wenn für alle }\\ h \approx 0 \textit{ gilt:} $
 $$ \text{*}f(x + h) \approx f(x) $$ 
 
