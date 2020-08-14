@@ -25,6 +25,7 @@
       \item Newton und Leibniz differntiale verwenden infinitesimale Größen 
       \item 19. Jh. Bolzano verbannt infinitesimale Größen aus Beweisen mit Epsilontik, Limes begriff
       \item 1960er formale Konstruktion von *$\mathbb{R}$ durch Abraham Robinson
+      \item mit infinitesimalen Größen sind die Beweise kürzer und \textit{eleganter} und einfacher?
 \end{enumerate}
 
 %Das Rechnen mit unendlich kleinen und unendlich großen Zahlen wie den Leibnizschen Differentialen
@@ -405,7 +406,7 @@ $$ \text{*}f(x + h) \approx f(x) $$
 miteinander betrachtet bzw. vergleichen.
 
 \begin{proof}
-      Beweis $ \Rightarrow $: \\
+      $ \Rightarrow $: \\
       Mit Satz 1.9 lässt sich $ f $ zu Funktion *$f: \text{*}\mathbb{R} \to \text{*}\mathbb{R} $ fortsetzen sodass für 
       $ a = (a^{(n)})_{n\in\mathbb{N}} $ gilt 
       $$ \text{*}f(a) \equiv (f(a^{(n)}))_{n\in\mathbb{N}} \text{ mod } M $$
@@ -427,26 +428,27 @@ miteinander betrachtet bzw. vergleichen.
       $ \epsilon \in  \mathbb{R}^+ $ gilt. Somit unterscheiden sich $ \text{*}f(x + h) $ und $  \text{*}f(x) $ nur
       um eine infinitesimale Größe, was heißt:
       $$ \text{*}f(x + h) \approx *f(x) $$
+\end{proof}
 
-      Beweis $ \Leftarrow $: durch Kontraposition \\
+\begin{proof}
+      $ \Leftarrow $: durch Kontraposition \\
       Wir nehmen also an $ f $ ist in $ x $ nicht stetig. 
       $$ \exists \epsilon \forall \delta \exists h: |h| \leqslant \delta \wedge |f(x + h) - f(x)| > \epsilon $$
       Dann gibt es ein $ \epsilon \in \mathbb{R}^+ $, sodass 
       zu jedem $ n \in \mathbb{N} $ ein $ h^{(n)} \in \mathbb{R} $ existiert mit $ |h^{(n)}| \leqslant \frac{1}{n} $
-      und $ |f(x + h^{(n)}) - f(x)| \geq \epsilon $. 
+      und $ |f(x + h^{(n)}) - f(x)| > \epsilon $. \\ 
+      \textit{(es gilt $ \forall \delta $ deshalb können wir $ |h^{(n)}| \leqslant \frac{1}{n} $ wählen, damit unser h dann infinitesimal ist wegen $ h \leqslant \frac{1}{\omega})$}
 
       \smallskip
       Setzen wir nun $ h = (h^{(n)})_{n\in\mathbb{N}} $ so gilt $ |h| \leqslant 1/\omega $ wegen 
       $ 1/\omega \in \textfrak{M} $ gilt auch $ h \in \textfrak{M} $, d.h. $ h \approx 0 $.
 
       \smallskip
-      Wir haben $ h^{(n)} $ so gewählt das gilt $ \mathbb{N} = \{n: |f(x + h^{(n)}) - f(x)| \geq \epsilon \} \in U $,
-      das heißt \textit{(wegen Anordnung von }*$\mathbb{R}$) $ |\text{*}f(x + h) - f(x)| \geq \epsilon $ das ist ein Widerspruch zur Vorraussetzung 
+      Wir haben $ h^{(n)} $ so gewählt das gilt $ \mathbb{N} = \{n: |f(x + h^{(n)}) - f(x)| > \epsilon \} \in U $,
+      das heißt \textit{(wegen Anordnung von }*$\mathbb{R}$) $ |\text{*}f(x + h) - f(x)| > \epsilon $ das ist ein Widerspruch zur Vorraussetzung 
       $\text{*}f(x + h) \approx f(x) $ für $ h \approx 0$. 
 
-
 \end{proof}
-
 
 
 \end{document}
